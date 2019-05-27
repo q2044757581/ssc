@@ -8,10 +8,11 @@ from pypinyin import pinyin, lazy_pinyin, Style
 import pypinyin
 import pkg_resources
 
-from soundshapecode.four_corner import FourCornerMethod
+from src.soundshapecode.four_corner import FourCornerMethod
+from src.soundshapecode.variant_kmp import VatiantKMP
+
 fcm = FourCornerMethod()
 
-from soundshapecode.variant_kmp import VatiantKMP
 
 SIMILARITY_THRESHOLD = 0.8
 SSC_ENCODE_WAY = 'ALL'#'ALL','SOUND','SHAPE'
@@ -144,9 +145,9 @@ def getSSC(hanzi_sentence, encode_way):
             shapeCode = getShapeCode(one_chi_word)
             ssc = "".join(soundCode+shapeCode)
         if encode_way=="SOUND":
-            ssc=ssc[:4]
+            ssc = ssc[:4]
         elif encode_way=="SHAPE":
-            ssc=ssc[4:]
+            ssc = ssc[4:]
         else:
             pass
         hanzi_sentence_ssc_list.append(ssc)

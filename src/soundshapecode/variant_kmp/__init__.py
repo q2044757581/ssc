@@ -1,4 +1,6 @@
-from soundshapecode.ssc_similarity.compute_ssc_similarity import computeSSCSimilaruty
+from src.soundshapecode.ssc_similarity.compute_ssc_similarity import computeSSCSimilaruty
+
+
 class VatiantKMP(object):
     #求模式串T的next函数（修正方法）值并存入next数组
     #nextVal = [-1]
